@@ -16,7 +16,7 @@ export default function Register() {
     setError("");
     setSuccess("");
     try {
-      await axios.post("http://127.0.0.1:5000/api/auth/register", {
+      await axios.post("https://ato-shield-backend.onrender.com/api/auth/register", {
         username,
         email,
         password,

@@ -23,7 +23,7 @@ export default function Dashboard() {
   async function fetchEvents(u) {
     try {
       const res = await axios.get(
-        `http://127.0.0.1:5000/api/dashboard/events?username=${u}`
+        `https://ato-shield-backend.onrender.com/api/dashboard/events?username=${u}`
       );
       const data = res.data.events || [];
       setEvents(data);

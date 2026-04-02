@@ -19,9 +19,9 @@ export default function AdminDashboard() {
 
   async function fetchAll() {
     const [s, u, e] = await Promise.all([
-      axios.get("http://127.0.0.1:5000/api/admin/stats", { headers }),
-      axios.get("http://127.0.0.1:5000/api/admin/users", { headers }),
-      axios.get("http://127.0.0.1:5000/api/admin/events", { headers }),
+      axios.get("https://ato-shield-backend.onrender.com/api/admin/stats", { headers }),
+      axios.get("https://ato-shield-backend.onrender.com/api/admin/users", { headers }),
+      axios.get("https://ato-shield-backend.onrender.com/api/admin/events", { headers }),
     ]);
     setStats(s.data);
     setUsers(u.data.users);
@@ -30,7 +30,7 @@ export default function AdminDashboard() {
 
   async function deleteUser(username) {
     if (!window.confirm(`Delete user ${username}?`)) return;
-    await axios.delete("http://127.0.0.1:5000/api/admin/delete-user", {
+    await axios.delete("https://ato-shield-backend.onrender.com/api/admin/delete-user", {
       headers, data: { username }
     });
     fetchAll();

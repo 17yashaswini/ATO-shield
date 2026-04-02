@@ -10,7 +10,7 @@ export default function AdminLogin() {
 
   async function handleLogin() {
     try {
-      const res = await axios.post("http://127.0.0.1:5000/api/admin/login", {
+      const res = await axios.post("https://ato-shield-backend.onrender.com/api/admin/login", {
         username, password
       });
       localStorage.setItem("adminToken", res.data.token);
