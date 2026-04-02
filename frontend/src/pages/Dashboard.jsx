@@ -24,7 +24,7 @@ useEffect(() => {
   async function fetchEvents(u) {
     try {
       const res = await axios.get(
-        `https://ato-shield-backend.onrender.com/api/dashboard/events?username=${u}`
+        `https://ato-shield.onrender.com/api/dashboard/events?username=${u}`
       );
       const data = res.data.events || [];
       setEvents(data);

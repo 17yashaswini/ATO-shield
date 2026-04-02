@@ -15,7 +15,7 @@ export default function OTPVerify() {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.post("https://ato-shield-backend.onrender.com/api/auth/verify-otp", {
+      const res = await axios.post("https://ato-shield.onrender.com/api/auth/verify-otp", {
         username,
         otp,
       });

@@ -20,9 +20,9 @@ useEffect(() => {
 
   async function fetchAll() {
     const [s, u, e] = await Promise.all([
-      axios.get("https://ato-shield-backend.onrender.com/api/admin/stats", { headers }),
-      axios.get("https://ato-shield-backend.onrender.com/api/admin/users", { headers }),
-      axios.get("https://ato-shield-backend.onrender.com/api/admin/events", { headers }),
+      axios.get("https://ato-shield.onrender.com/api/admin/stats", { headers }),
+      axios.get("https://ato-shield.onrender.com/api/admin/users", { headers }),
+      axios.get("https://ato-shield.onrender.com/api/admin/events", { headers }),
     ]);
     setStats(s.data);
     setUsers(u.data.users);
@@ -31,7 +31,7 @@ useEffect(() => {
 
   async function deleteUser(username) {
     if (!window.confirm(`Delete user ${username}?`)) return;
-    await axios.delete("https://ato-shield-backend.onrender.com/api/admin/delete-user", {
+    await axios.delete("https://ato-shield.onrender.com/api/admin/delete-user", {
       headers, data: { username }
     });
     fetchAll();
