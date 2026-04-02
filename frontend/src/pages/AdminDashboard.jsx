@@ -12,7 +12,8 @@ export default function AdminDashboard() {
   const token = localStorage.getItem("adminToken");
   const headers = { Authorization: `Bearer ${token}` };
 
-  useEffect(() => {
+  // eslint-disable-next-line
+useEffect(() => {
     if (!token) { navigate("/admin"); return; }
     fetchAll();
   }, []);

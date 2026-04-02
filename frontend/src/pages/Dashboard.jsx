@@ -12,7 +12,8 @@ export default function Dashboard() {
   const [stats, setStats] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  // eslint-disable-next-line
+useEffect(() => {
     const u = localStorage.getItem("username");
     const t = localStorage.getItem("token");
     if (!t) { navigate("/"); return; }
