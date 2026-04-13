@@ -2,7 +2,8 @@ from flask import Flask
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://ato-shield-8hpd-xi.vercel.app", "http://localhost:3000"], 
+     supports_credentials=True)
 
 from routes.auth import auth_bp
 from routes.dashboard import dashboard_bp
